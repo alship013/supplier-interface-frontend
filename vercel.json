@@ -1,7 +1,7 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npx pnpm install --shamefully-hoist",
+  "installCommand": "npm install --prefer-offline --no-audit",
   "framework": "vite",
   "rewrites": [
     {
