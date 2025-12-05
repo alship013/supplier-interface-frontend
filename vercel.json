@@ -1,28 +1,25 @@
 {
-  "buildCommand": "npx vite build --mode production",
-  "outputDirectory": "dist",
-  "installCommand": "npm install --prefer-offline --no-audit --silent",
-  "framework": null,
-  "functions": {},
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://genco-api.vercel.app/api/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
-  "headers": [
+  "installCommand": "npm install --prefer-offline --no-audit --silent",
+  "buildCommand": "npx vite build",
+  "outputDirectory": "dist",
+  "routes": [
     {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "/api/(.*)",
+      "dest": "https://genco-api.vercel.app/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

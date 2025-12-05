@@ -1,0 +1,11 @@
+src/services/productionDatabase.ts.bak
+src/services/supplierApiAdapter.ts.bak
+src/services/supplierDatabase.ts.bak
+src/components/SupplierSurveyForm.tsx
+src/components/TankDiagram.tsx
+src/data/mockContracts.ts
+src/data/mockProcessingData.ts
+src/hooks/useAutosave.ts
+src/pages/ProcessingPage.tsx
+src/pages/ProductionPage.tsx
+src/services/api.ts
