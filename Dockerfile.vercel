@@ -1,0 +1,27 @@
+# Dockerfile for Vercel deployment with pre-installed dependencies
+FROM node:18-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies using offline cache
+RUN npm ci --offline || npm ci --registry https://registry.npmjs.org/ || \
+    npm ci --registry https://npm.pkg.github.com/ || \
+    npm install --prefer-offline --no-audit
+
+# Copy source code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Output directory
+FROM node:18-alpine AS runner
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./package.json
+
+CMD ["npm", "start"]
