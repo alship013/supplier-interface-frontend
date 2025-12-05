@@ -1,8 +1,9 @@
 {
-  "buildCommand": "npx vite build",
+  "buildCommand": "npx vite build --mode production",
   "outputDirectory": "dist",
-  "installCommand": "npm install --prefer-offline --no-audit",
-  "framework": "vite",
+  "installCommand": "npm install --prefer-offline --no-audit --silent",
+  "framework": null,
+  "functions": {},
   "rewrites": [
     {
       "source": "/api/(.*)",
