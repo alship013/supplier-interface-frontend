@@ -1,0 +1,6 @@
+lockfileVersion: '6.0'
+dependencies:
+  # This file will be populated by Vercel during deployment
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

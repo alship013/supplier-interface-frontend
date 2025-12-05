@@ -1,7 +1,7 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "yarn install --network-concurrency 1",
+  "installCommand": "npx pnpm install --shamefully-hoist",
   "framework": "vite",
   "rewrites": [
     {
